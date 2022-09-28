@@ -14,8 +14,7 @@ function Navbar() {
   <ModalComponent title="Language" />
   <ModalComponent title="Support Center" />
    
- 
-</Flex>
+ </Flex>
  
 
       {/* 2nd line_navbar */}
