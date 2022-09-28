@@ -1,6 +1,7 @@
 import {Box,Text} from "@chakra-ui/react"
 import './App.css';
 import Navbar from "./Components/Navbar";
+import FirstR_SecondHalf from "./Pages/FirstR_SecondHalf";
 import Home from "./Pages/Home";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <Box className="App">
     <Navbar/>
     <Home/>
+  
     </Box>
 
   );
