@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  border: 1px solid;
 }
 
 .App-logo {
@@ -35,4 +36,55 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+ /* slid Show com */
+ 
+
+ .slideshow {
+  margin: 0 auto;
+  overflow: hidden;
+  max-width: 100%;
+  height: 100%; 
+   border: 2px solid #6a0dad 
+}  
+
+.slideshowSlider {
+  white-space: nowrap;
+  transition: ease 1000ms;
+  /* border: 2px solid #df7708; */
+}
+
+.slide {
+  display: inline-block;
+  /* height: 570px; this make the changes in content height  */ 
+  width: 100%;
+  border-radius: 40px;
+  /* border: 2px solid #0ff560; */
+}
+
+/*  slidShow button Buttons */
+
+.slideshowDots {
+  text-align: center;
+    margin-top: -10px; 
+  border: 2px solid #0bbaf9;  
+}
+
+.slideshowDot {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+ /* border: 2px solid #f4f1f6 ; */
+
+  cursor: pointer;
+  margin: 15px 7px 0px;
+  color: white;
+  background-color: #c4c4c4;
+}
+
+.slideshowDot.active {
+  background-color: #4d0cf1;
 }
