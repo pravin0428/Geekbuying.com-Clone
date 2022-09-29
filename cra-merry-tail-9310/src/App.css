@@ -88,3 +88,20 @@
 .slideshowDot.active {
   background-color: #4d0cf1;
 }
+
+/* 2nd row */
+.row2nd_img{
+  display: flex;
+  justify-content: space-between;
+   gap: 20px;
+}
+
+.headingstyle{
+  font-weight: bold;
+  text-align: start;
+}
+
+.textSecondRow{
+  color: rgb(97, 97, 97);
+  text-align: start;
+}

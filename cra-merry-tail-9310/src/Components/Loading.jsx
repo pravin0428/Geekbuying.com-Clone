@@ -1,0 +1,117 @@
+import { Skeleton, Stack } from "@chakra-ui/react";
+import React from "react";
+function Loading() {
+  const [isLoaded, setIsLoaded] = React.useState(false);
+  return (
+    <Stack padding={4} spacing={1}>
+      <Skeleton height="40px" isLoaded={isLoaded}></Skeleton>
+      <Skeleton
+        height="40px"
+        isLoaded={isLoaded}
+        bg="green.500"
+        color="white"
+        fadeDuration={1}
+      ></Skeleton>
+      <Skeleton
+        height="40px"
+        isLoaded={isLoaded}
+        fadeDuration={4}
+        bg="blue.500"
+        color="white"
+      ></Skeleton>
+      <Skeleton
+        height="40px"
+        isLoaded={isLoaded}
+        fadeDuration={4}
+        bg="blue.500"
+        color="white"
+      ></Skeleton>
+      <Skeleton
+        height="40px"
+        isLoaded={isLoaded}
+        fadeDuration={4}
+        bg="blue.500"
+        color="white"
+      ></Skeleton>
+      <Skeleton
+        height="40px"
+        isLoaded={isLoaded}
+        fadeDuration={4}
+        bg="blue.500"
+        color="white"
+      ></Skeleton>
+      <Skeleton
+        height="40px"
+        isLoaded={isLoaded}
+        fadeDuration={4}
+        bg="blue.500"
+        color="white"
+      ></Skeleton>
+      <Skeleton
+        height="40px"
+        isLoaded={isLoaded}
+        fadeDuration={4}
+        bg="blue.500"
+        color="white"
+      ></Skeleton>
+      <Skeleton
+        height="40px"
+        isLoaded={isLoaded}
+        fadeDuration={4}
+        bg="blue.500"
+        color="white"
+      ></Skeleton>
+      <Skeleton
+        height="40px"
+        isLoaded={isLoaded}
+        fadeDuration={4}
+        bg="blue.500"
+        color="white"
+      ></Skeleton>
+      <Skeleton
+        height="40px"
+        isLoaded={isLoaded}
+        fadeDuration={4}
+        bg="blue.500"
+        color="white"
+      ></Skeleton>
+      <Skeleton
+        height="40px"
+        isLoaded={isLoaded}
+        fadeDuration={4}
+        bg="blue.500"
+        color="white"
+      ></Skeleton>
+      <Skeleton
+        height="40px"
+        isLoaded={isLoaded}
+        fadeDuration={4}
+        bg="blue.500"
+        color="white"
+      ></Skeleton>
+      <Skeleton
+        height="40px"
+        isLoaded={isLoaded}
+        fadeDuration={4}
+        bg="blue.500"
+        color="white"
+      ></Skeleton>
+      <Skeleton
+        height="40px"
+        isLoaded={isLoaded}
+        fadeDuration={4}
+        bg="blue.500"
+        color="white"
+      ></Skeleton>
+      <Skeleton
+        height="40px"
+        isLoaded={isLoaded}
+        fadeDuration={4}
+        bg="blue.500"
+        color="white"
+      ></Skeleton>
+    </Stack>
+  );
+}
+
+export default Loading;
