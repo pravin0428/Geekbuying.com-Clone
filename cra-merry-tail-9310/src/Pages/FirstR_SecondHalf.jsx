@@ -27,7 +27,7 @@ function FirstR_SecondHalf() {
     <> 
     <SimpleGrid minChildWidth='120px' spacing='40px' textAlign="center" >
       {data.map((elem) =>{
-        return <Link to="/shopingPage">  <Box key={elem.id}   >
+        return <Link to="/shopingPage">  <Box key="Date.now()"   >
             <Image src={elem.image} alt='Dan Abramov' />
             <Text backgroundColor="red"  color="white" borderRadius="20px" width="100px" >{elem.discount}</Text>
             <Text>{elem.original}</Text>

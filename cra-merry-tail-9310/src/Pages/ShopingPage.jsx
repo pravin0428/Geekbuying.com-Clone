@@ -114,7 +114,7 @@ function ShopingPage() {
         {shoping &&
           shoping.map((elem) => (
             <Stack key={elem.id}>
-              <Box boxShadow="lg" p="6" rounded="md" bg="white">
+              <Box boxShadow="lg" p="6" rounded="md" bg="white" key={elem.id}>
                 <Img src={elem.image} alt={elem.original} />
                 <Text fontSize="small" textAlign="start" p={2}>
                   {" "}

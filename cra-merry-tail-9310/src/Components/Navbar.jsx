@@ -1,9 +1,15 @@
-import { Box, Container, Input, Link, Img, HStack, Flex, ButtonGroup, Spacer, Button, Icon } from "@chakra-ui/react";
+import { Box, Container, Input,  Img, HStack, Flex, ButtonGroup, Spacer, Button, Icon } from "@chakra-ui/react";
 import React from "react";
+import {Link} from "react-router-dom"
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ModalComponent from "./ModalComp";
 import styles from "./Navbar.module.css";
+import { useContext } from "react";
+import { AuthContext } from "../Context/AuthContext";
 function Navbar() {
+
+  const{nameDis,isAuth} = useContext(AuthContext)
+ console.log(isAuth , nameDis)
   return (
     <Box border="4px solid red" backgroundColor="#318ffb" >
       {/* 1st line_navbar */}
@@ -48,7 +54,8 @@ function Navbar() {
   <Spacer />
   
   <ModalComponent title="Ship to/INR" />
-  <ModalComponent title="Sign in" />
+  <ModalComponent title={isAuth===true? nameDis : "Sign In"} text="Welcome to Geekbuying" />
+  {/* <Link to="/login" >Sign in</Link> */}
   <ModalComponent title="cart" />
    
  
