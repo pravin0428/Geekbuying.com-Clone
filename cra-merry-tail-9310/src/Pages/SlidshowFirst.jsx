@@ -58,8 +58,8 @@ function SlideshowFirst() {
           style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
         >
       {colors.map((elem)=>(
-           <div className="slide" > 
-          <img style={{height:"100%" , width:"100%"}} key={elem.id} src={elem.img}  alt={elem.id} />
+           <div className="slide" key={elem.id} > 
+          <img style={{height:"100%" , width:"100%"}}   src={elem.img}  alt={elem.id} />
         </div>
       ))}
         </div>

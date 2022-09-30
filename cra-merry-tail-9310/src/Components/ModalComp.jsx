@@ -12,7 +12,8 @@ import {
     Box
   } from '@chakra-ui/react'
   import styles from "./Navbar.module.css"
-  function ModalComponent({title}) {
+  import {Link} from "react-router-dom"
+  function ModalComponent({title , text}) {
     const { isOpen, onOpen, onClose } = useDisclosure()
 
     return (
@@ -33,14 +34,21 @@ import {
 
             <ModalCloseButton  />
             <ModalBody >
-               <Text>hi</Text>
+               <Text textAlign="center" >{text}</Text>
+               <br />
+              
+              <Box display="flex" justifyContent="space-around" >
+              <Button w="170px" bg="#0066FF" color="white" >Join</Button>
+             <Link to='/login' ><Button w="170px" color="#0066FF" border="0.5px solid #0066FF" >Sign In</Button></Link>
+              </Box>
+               
             </ModalBody>
   
             <ModalFooter >
-              <Button colorScheme='blue' mr={3} onClick={onClose}>
+              {/* <Button colorScheme='blue' mr={3} onClick={onClose}>
                 Close
-              </Button>
-              <Button variant='ghost'>Secondary Action</Button>
+              </Button> */}
+              {/* <Button variant='ghost'>Secondary Action</Button> */}
             </ModalFooter>
           </ModalContent>
         </Modal>
