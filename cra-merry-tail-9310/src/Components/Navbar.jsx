@@ -6,6 +6,7 @@ import ModalComponent from "./ModalComp";
 import styles from "./Navbar.module.css";
 import { useContext } from "react";
 import { AuthContext } from "../Context/AuthContext";
+import ShowCart from "../Pages/ShowCart";
 function Navbar() {
 
   const{nameDis,isAuth} = useContext(AuthContext)
@@ -27,7 +28,7 @@ function Navbar() {
 
       <Flex padding="10px" >
     <Box w='70px' h='10' >
-    <Img src="https://drive.google.com/file/d/121f9Nt8LrESZENCpZTnSimfXxHmq0MWe/view?usp=sharing" alt="logo"/> 
+   <Link to="/" ><Img src="https://drive.google.com/file/d/121f9Nt8LrESZENCpZTnSimfXxHmq0MWe/view?usp=sharing" alt="logo"/></Link> 
     </Box>
  
     <Box w='270px' h='10' display="flex" >
@@ -55,8 +56,9 @@ function Navbar() {
   
   <ModalComponent title="Ship to/INR" />
   <ModalComponent title={isAuth===true? nameDis : "Sign In"} text="Welcome to Geekbuying" />
-  {/* <Link to="/login" >Sign in</Link> */}
-  <ModalComponent title="cart" />
+  
+  <ShowCart  />
+
    
  
 </Flex>
