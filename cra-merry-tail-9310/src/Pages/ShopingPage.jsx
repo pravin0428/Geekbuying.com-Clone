@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { useState } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import Loading from "../Components/Loading";
 
 const iconArr = [
@@ -68,7 +69,7 @@ const iconArr = [
 ]
 
 const shopingData = () => {
-  return fetch("https://pravin0428.github.io/myData/open_data.geojson").then(
+  return fetch("http://localhost:3004/Electronics").then(
     (res) => res.json()
   );
 };
@@ -76,11 +77,12 @@ const shopingData = () => {
 function ShopingPage() {
   const [shoping, setShoping] = useState([]);
   const[isLoading , setIsLoading] = useState(false)
+  const[serachParams , setSearchParams] = useSearchParams()
   useState(() => {
     setIsLoading(true)
     shopingData().then((res) => {
-      console.log(res.Electronics);
-      setShoping(res.Electronics);
+      console.log(res);
+      setShoping(res);
       setIsLoading(false)
     }).then((err) =>{
         console.log(err)
@@ -114,7 +116,7 @@ function ShopingPage() {
         {shoping &&
           shoping.map((elem) => (
             <Stack key={elem.id}>
-              <Box boxShadow="lg" p="6" rounded="md" bg="white" key={elem.id}>
+           <Link to={`/cartpage/${elem.id}`} >    <Box boxShadow="lg" p="6" rounded="md" bg="white" key={elem.id}>
                 <Img src={elem.image} alt={elem.original} />
                 <Text fontSize="small" textAlign="start" p={2}>
                   {" "}
@@ -151,6 +153,7 @@ function ShopingPage() {
                   {elem.discount}
                 </Text>
               </Box>
+              </Link>
             </Stack>
           ))}
       </SimpleGrid>
@@ -160,14 +163,4 @@ function ShopingPage() {
 
 export default ShopingPage;
 
-/* 
-before: 26.99
-detail: "Xiaomi WiFi Amplifier Pro 2X2 External Antenna 300Mbps Support 64 Devices Simultaneous Link - Black"
-detail_url: "https://www.geekbuying.com/item/Xiaomi-WiFi-Amplifier-Pro-Black-383286.html?pmrm=best-sellers"
-discount: "30% OFF"
-id: "1"
-image: "https://img.gkbcdn.com/p/2017-07-26/xiaomi-wifi-amplifier-pro-black-1574132393616._w280_.jpg"
-original: 19.99
-star: "🌟🌟🌟🌟"
-url: "https://www.geekbuying.
-*/
+ 
