@@ -3,22 +3,22 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import ShopingPage from './ShopingPage'
+ 
 // import data from "../DataFiles/db.json"
 // const newdata = data.Electronics
   // console.log(data.Electronics)
 const getData = () =>{
-   return fetch("https://pravin0428.github.io/myData/limited.json").then((res) => res.json())
+   return fetch("http://localhost:3004/weadevices?_limit=8").then((res) => res.json())
 }
 
-function FirstR_SecondHalf() {
+function ForthR_SecondHalf() {
 
-     const[data , setData] = useState([])
+     const[fourthData , setFourthData] = useState([])
   //  console.log(data)
     useEffect(()=>{
       getData().then((res)=>{
-            // console.log(res.Electronics)
-            setData(res.Electronics)
+             console.log(res)
+            setFourthData(res)
         })
     },[])
 
@@ -26,8 +26,8 @@ function FirstR_SecondHalf() {
   return (
     <> 
     <SimpleGrid minChildWidth='120px' spacing='40px' textAlign="center" >
-      {data.map((elem) =>{
-        return <Link to="/shopingPage">  <Box key="Date.now()"   >
+      {fourthData.map((elem) =>{
+        return <Link to="/ShopingPage">  <Box mt={20} key="Date.now()"  >
             <Image src={elem.image} alt='Dan Abramov' />
             <Text backgroundColor="red"  color="white" borderRadius="20px" width="100px" >{elem.discount}</Text>
             <Text>{elem.original}</Text>
@@ -36,10 +36,10 @@ function FirstR_SecondHalf() {
         </Box>
         </Link>
       })}
-  </SimpleGrid>
+  </SimpleGrid>  
   
   </>
   )
 }
 
-export default FirstR_SecondHalf
+export default ForthR_SecondHalf

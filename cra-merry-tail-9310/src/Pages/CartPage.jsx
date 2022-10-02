@@ -1,12 +1,19 @@
 import { Center, Flex, Box, Text, Button } from "@chakra-ui/react";
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { AuthContext } from "../Context/AuthContext";
+import ShowCart from "./ShowCart";
+
+var cartData = JSON.parse(localStorage.getItem("cartdata")) || [];
 
 function CartPage() {
   const [singleData, setSingleData] = useState([]);
+  
   const params = useParams();
-  console.log(params.id);
+//   console.log(params.id);
+  const{isAuth} = useContext(AuthContext)
+
   useEffect(() => {
     fetch(`http://localhost:3004/Electronics/${params.id}`)
       .then((res) => res.json())
@@ -19,6 +26,19 @@ function CartPage() {
       });
   }, [params]);
 
+  const addItemToCartArr = (id,url,price,name) =>{
+   
+    var payload ={
+      id:id,
+      url : url,
+      price : price,
+      name : name
+    }
+   cartData.push(payload)
+   localStorage.setItem("cartdata", JSON.stringify(cartData));
+    alert("acount created successfully")
+  }
+ 
   return (
     <>
       <Flex color="white">
@@ -45,7 +65,7 @@ function CartPage() {
           <Box
             display="flex"
             justifyContent="space-evenly"
-            border="1px solid green"
+            // border="1px solid green"
             width="250px"
             alignItems="center"
           >
@@ -92,34 +112,33 @@ function CartPage() {
             justifyContent="space-between"
             mt={10}
             ml="-28px"
-            border="1px solid red"
+            // border="1px solid red"
             width="350px"
           >
-            <Link to="/login">
-              {" "}
-              <Button
+          <Button
                 w="170px"
                 bg="#fff"
                 color="#06f"
                 p={6}
                 cursor="pointer"
-                border="2px solid #06f"
+                // border="2px solid #06f"
                 borderRadius="4px"
                 overflow="hidden"
                 fontSize="larger"
                 fontWeight="bold"
+                onClick={() => addItemToCartArr(singleData.id , singleData.image ,singleData.original,singleData.detail )}
               >
                 Add to Cart
               </Button>
-            </Link>
-            <Link to="/login">
+          
+            <Link to="/chekoutPage">
               <Button
                 w="170px"
                 color="#fff"
                 p={6}
                 bg="#06f"
                 cursor="pointer"
-                border="2px solid #06f"
+                // border="2px solid #06f"
                 borderRadius="4px"
                 overflow="hidden"
                 fontSize="larger"
@@ -131,6 +150,9 @@ function CartPage() {
           </Box>
         </Box>
       </Flex>
+
+ 
+
     </>
   );
 }

@@ -19,7 +19,7 @@ import {
     return (
       <>
        
-        <Button onMouseEnter={onOpen} backgroundColor="#318ffb" color="white" >{title}</Button>
+        <Button onMouseEnter={onOpen} backgroundColor="#318ffb"  color="black"  bgGradient='linear(to-r, gray.300, yellow.400, pink.200)' >{title}</Button>
   
         <Modal isOpen={isOpen} onClose={onClose}>
           <ModalOverlay  />
