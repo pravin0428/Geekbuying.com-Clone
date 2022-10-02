@@ -1,6 +1,8 @@
 import React from 'react'
-import FirstRowMain from './FirstRowMain'
-import SecondRowHome from './SecondRowHome'
+import FirstRowMain from '../HomePageSection/FirstRowMain'
+import ForthRow from '../HomePageSection/ForthRow'
+import SecondRowHome from '../HomePageSection/SecondRowHome'
+import ThirdRowHome from '../HomePageSection/ThirdRow'
 
 function Home() {
   return (
@@ -8,6 +10,8 @@ function Home() {
     <div>
       <FirstRowMain/>
       <SecondRowHome/>
+      <ThirdRowHome/>
+      <ForthRow/>
     </div>
   )
 }

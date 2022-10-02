@@ -112,7 +112,7 @@ function ShopingPage() {
      </SimpleGrid> */}
     
 
-      <SimpleGrid border="1px solid black" minChildWidth="210px" spacing="30px">
+      <SimpleGrid  minChildWidth="210px" spacing="30px">
         {shoping &&
           shoping.map((elem) => (
             <Stack key={elem.id}>
