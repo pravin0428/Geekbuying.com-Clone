@@ -4,8 +4,8 @@ GEEKBUYING it is an E-com website where you can buy the different category of pr
 
 ## Credits
 
- - Images : [fiverr.com](https://www.geekbuying.com/)
- - Content : [fiverr.com](https://www.geekbuying.com/)
+ - Images : [geekbuying.com](https://www.geekbuying.com/)
+ - Content : [geekbuying.com](https://www.geekbuying.com/)
  - Icons : [Chakra Icons](https://chakra-ui.com/)
  - References : [React.js](https://reactjs.org/) | [Ckakra UI](https://chakra-ui.com/)
 
